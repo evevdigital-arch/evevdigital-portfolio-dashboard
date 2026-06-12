@@ -27,6 +27,22 @@
   .filters input { padding: 12px 20px; width: 300px; border: 1px solid #bdc3c7; border-radius: 8px; font-size: 1rem; outline: none; transition: border-color 0.3s; }
   .filters input:focus { border-color: #1abc9c; box-shadow: 0 0 5px rgba(26, 188, 156, 0.3); }
   @media print { .btn-print, .filters { display: none; } body { background: #fff; padding: 0; } table { box-shadow: none; border: 1px solid #ddd; } }
+  
+  /* Responsive Mobile */
+  @media (max-width: 768px) {
+    .filters { flex-direction: column; }
+    .filters input { width: 100%; box-sizing: border-box; }
+    table { border: 0; box-shadow: none; background: transparent; }
+    table thead { border: none; clip: rect(0 0 0 0); height: 1px; margin: -1px; overflow: hidden; padding: 0; position: absolute; width: 1px; }
+    table tr { border-bottom: 3px solid #ddd; display: block; margin-bottom: 20px; background: #fff; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); padding: 15px; }
+    table td { border-bottom: 1px solid #eee; display: block; font-size: 0.95em; text-align: right; padding: 12px 0; }
+    table td::before { content: attr(data-label); float: left; font-weight: bold; text-transform: uppercase; color: #2c3e50; }
+    table td:last-child { border-bottom: 0; }
+    .img-wrapper { width: 100%; height: 160px; margin-top: 10px; }
+    td[data-label="Tangkapan Layar (Otomatis)"] { text-align: center; }
+    td[data-label="Tangkapan Layar (Otomatis)"]::before { display: block; float: none; margin-bottom: 10px; text-align: left; }
+    .editable { text-align: right; }
+  }
 </style>
 </head>
 <body>
@@ -55,175 +71,175 @@
       </thead>
       <tbody>
         <tr>
-          <td>1</td>
-          <td><div class="img-wrapper"><img src="https://image.thum.io/get/width/400/crop/800/https://evevdigital-salonkecantikangem.vercel.app" alt="Screenshot" loading="lazy"></div></td>
-          <td><a href="https://evevdigital-salonkecantikangem.vercel.app" target="_blank">evevdigital-salonkecantikangem</a></td>
-          <td><span class="tag">Klinik Kecantikan</span></td>
-          <td><div class="editable" contenteditable="true">Ketik di sini...</div></td>
-          <td>HTML/CSS/JS</td>
-          <td><a href="https://github.com/evevdigital-arch/evevdigital-salonkecantikangem" target="_blank">Lihat GitHub</a></td>
+          <td data-label="No">1</td>
+          <td data-label="Tangkapan Layar (Otomatis)"><div class="img-wrapper"><img src="https://image.thum.io/get/width/400/crop/800/https://evevdigital-salonkecantikangem.vercel.app" alt="Screenshot" loading="lazy"></div></td>
+          <td data-label="Nama Proyek & Tautan"><a href="https://evevdigital-salonkecantikangem.vercel.app" target="_blank">evevdigital-salonkecantikangem</a></td>
+          <td data-label="Kategori"><span class="tag">Klinik Kecantikan</span></td>
+          <td data-label="Klien (Klik & Ketik)"><div class="editable" contenteditable="true">Ketik di sini...</div></td>
+          <td data-label="Teknologi">HTML/CSS/JS</td>
+          <td data-label="Kode Sumber"><a href="https://github.com/evevdigital-arch/evevdigital-salonkecantikangem" target="_blank">Lihat GitHub</a></td>
         </tr>
         <tr>
-          <td>2</td>
-          <td><div class="img-wrapper"><img src="https://image.thum.io/get/width/400/crop/800/https://toko-buah-freshimport.vercel.app" alt="Screenshot" loading="lazy"></div></td>
-          <td><a href="https://toko-buah-freshimport.vercel.app" target="_blank">toko-buah-freshimport</a></td>
-          <td><span class="tag">F&B / Retail</span></td>
-          <td><div class="editable" contenteditable="true">Ketik di sini...</div></td>
-          <td>HTML/CSS/JS</td>
-          <td><a href="https://github.com/evevdigital-arch/toko-buah-freshimport" target="_blank">Lihat GitHub</a></td>
+          <td data-label="No">2</td>
+          <td data-label="Tangkapan Layar (Otomatis)"><div class="img-wrapper"><img src="https://image.thum.io/get/width/400/crop/800/https://toko-buah-freshimport.vercel.app" alt="Screenshot" loading="lazy"></div></td>
+          <td data-label="Nama Proyek & Tautan"><a href="https://toko-buah-freshimport.vercel.app" target="_blank">toko-buah-freshimport</a></td>
+          <td data-label="Kategori"><span class="tag">F&B / Retail</span></td>
+          <td data-label="Klien (Klik & Ketik)"><div class="editable" contenteditable="true">Ketik di sini...</div></td>
+          <td data-label="Teknologi">HTML/CSS/JS</td>
+          <td data-label="Kode Sumber"><a href="https://github.com/evevdigital-arch/toko-buah-freshimport" target="_blank">Lihat GitHub</a></td>
         </tr>
         <tr>
-          <td>3</td>
-          <td><div class="img-wrapper"><img src="https://image.thum.io/get/width/400/crop/800/https://evevdigital-bimbel2.vercel.app" alt="Screenshot" loading="lazy"></div></td>
-          <td><a href="https://evevdigital-bimbel2.vercel.app" target="_blank">evevdigital-bimbel2</a></td>
-          <td><span class="tag">Edukasi / Kursus</span></td>
-          <td><div class="editable" contenteditable="true">Ketik di sini...</div></td>
-          <td>HTML/CSS/JS</td>
-          <td><a href="https://github.com/evevdigital-arch/evevdigital-bimbel2" target="_blank">Lihat GitHub</a></td>
+          <td data-label="No">3</td>
+          <td data-label="Tangkapan Layar (Otomatis)"><div class="img-wrapper"><img src="https://image.thum.io/get/width/400/crop/800/https://evevdigital-bimbel2.vercel.app" alt="Screenshot" loading="lazy"></div></td>
+          <td data-label="Nama Proyek & Tautan"><a href="https://evevdigital-bimbel2.vercel.app" target="_blank">evevdigital-bimbel2</a></td>
+          <td data-label="Kategori"><span class="tag">Edukasi / Kursus</span></td>
+          <td data-label="Klien (Klik & Ketik)"><div class="editable" contenteditable="true">Ketik di sini...</div></td>
+          <td data-label="Teknologi">HTML/CSS/JS</td>
+          <td data-label="Kode Sumber"><a href="https://github.com/evevdigital-arch/evevdigital-bimbel2" target="_blank">Lihat GitHub</a></td>
         </tr>
         <tr>
-          <td>4</td>
-          <td><div class="img-wrapper"><img src="https://image.thum.io/get/width/400/crop/800/https://evevdigital-bengkelmobil2.vercel.app" alt="Screenshot" loading="lazy"></div></td>
-          <td><a href="https://evevdigital-bengkelmobil2.vercel.app" target="_blank">evevdigital-bengkelmobil2</a></td>
-          <td><span class="tag">Otomotif / Jasa</span></td>
-          <td><div class="editable" contenteditable="true">Ketik di sini...</div></td>
-          <td>HTML/CSS/JS</td>
-          <td><a href="https://github.com/evevdigital-arch/evevdigital-bengkelmobil2" target="_blank">Lihat GitHub</a></td>
+          <td data-label="No">4</td>
+          <td data-label="Tangkapan Layar (Otomatis)"><div class="img-wrapper"><img src="https://image.thum.io/get/width/400/crop/800/https://evevdigital-bengkelmobil2.vercel.app" alt="Screenshot" loading="lazy"></div></td>
+          <td data-label="Nama Proyek & Tautan"><a href="https://evevdigital-bengkelmobil2.vercel.app" target="_blank">evevdigital-bengkelmobil2</a></td>
+          <td data-label="Kategori"><span class="tag">Otomotif / Jasa</span></td>
+          <td data-label="Klien (Klik & Ketik)"><div class="editable" contenteditable="true">Ketik di sini...</div></td>
+          <td data-label="Teknologi">HTML/CSS/JS</td>
+          <td data-label="Kode Sumber"><a href="https://github.com/evevdigital-arch/evevdigital-bengkelmobil2" target="_blank">Lihat GitHub</a></td>
         </tr>
         <tr>
-          <td>5</td>
-          <td><div class="img-wrapper"><img src="https://image.thum.io/get/width/400/crop/800/https://evevdigital-vapestore2.vercel.app" alt="Screenshot" loading="lazy"></div></td>
-          <td><a href="https://evevdigital-vapestore2.vercel.app" target="_blank">evevdigital-vapestore2</a></td>
-          <td><span class="tag">Retail Khusus</span></td>
-          <td><div class="editable" contenteditable="true">Ketik di sini...</div></td>
-          <td>HTML/CSS/JS</td>
-          <td><a href="https://github.com/evevdigital-arch/evevdigital-vapestore2" target="_blank">Lihat GitHub</a></td>
+          <td data-label="No">5</td>
+          <td data-label="Tangkapan Layar (Otomatis)"><div class="img-wrapper"><img src="https://image.thum.io/get/width/400/crop/800/https://evevdigital-vapestore2.vercel.app" alt="Screenshot" loading="lazy"></div></td>
+          <td data-label="Nama Proyek & Tautan"><a href="https://evevdigital-vapestore2.vercel.app" target="_blank">evevdigital-vapestore2</a></td>
+          <td data-label="Kategori"><span class="tag">Retail Khusus</span></td>
+          <td data-label="Klien (Klik & Ketik)"><div class="editable" contenteditable="true">Ketik di sini...</div></td>
+          <td data-label="Teknologi">HTML/CSS/JS</td>
+          <td data-label="Kode Sumber"><a href="https://github.com/evevdigital-arch/evevdigital-vapestore2" target="_blank">Lihat GitHub</a></td>
         </tr>
         <tr>
-          <td>6</td>
-          <td><div class="img-wrapper"><img src="https://image.thum.io/get/width/400/crop/800/https://evevdigital-salon-2.vercel.app" alt="Screenshot" loading="lazy"></div></td>
-          <td><a href="https://evevdigital-salon-2.vercel.app" target="_blank">evevdigital-salon-2</a></td>
-          <td><span class="tag">Kecantikan / Salon</span></td>
-          <td><div class="editable" contenteditable="true">Ketik di sini...</div></td>
-          <td>HTML/CSS/JS</td>
-          <td><a href="https://github.com/evevdigital-arch/evevdigital-salon-2" target="_blank">Lihat GitHub</a></td>
+          <td data-label="No">6</td>
+          <td data-label="Tangkapan Layar (Otomatis)"><div class="img-wrapper"><img src="https://image.thum.io/get/width/400/crop/800/https://evevdigital-salon-2.vercel.app" alt="Screenshot" loading="lazy"></div></td>
+          <td data-label="Nama Proyek & Tautan"><a href="https://evevdigital-salon-2.vercel.app" target="_blank">evevdigital-salon-2</a></td>
+          <td data-label="Kategori"><span class="tag">Kecantikan / Salon</span></td>
+          <td data-label="Klien (Klik & Ketik)"><div class="editable" contenteditable="true">Ketik di sini...</div></td>
+          <td data-label="Teknologi">HTML/CSS/JS</td>
+          <td data-label="Kode Sumber"><a href="https://github.com/evevdigital-arch/evevdigital-salon-2" target="_blank">Lihat GitHub</a></td>
         </tr>
         <tr>
-          <td>7</td>
-          <td><div class="img-wrapper"><img src="https://image.thum.io/get/width/400/crop/800/https://evevdigital-hotel.vercel.app" alt="Screenshot" loading="lazy"></div></td>
-          <td><a href="https://evevdigital-hotel.vercel.app" target="_blank">evevdigital-hotel</a></td>
-          <td><span class="tag">Hospitality / Hotel</span></td>
-          <td><div class="editable" contenteditable="true">Ketik di sini...</div></td>
-          <td>HTML/CSS/JS</td>
-          <td><a href="https://github.com/evevdigital-arch/evevdigital-hotel" target="_blank">Lihat GitHub</a></td>
+          <td data-label="No">7</td>
+          <td data-label="Tangkapan Layar (Otomatis)"><div class="img-wrapper"><img src="https://image.thum.io/get/width/400/crop/800/https://evevdigital-hotel.vercel.app" alt="Screenshot" loading="lazy"></div></td>
+          <td data-label="Nama Proyek & Tautan"><a href="https://evevdigital-hotel.vercel.app" target="_blank">evevdigital-hotel</a></td>
+          <td data-label="Kategori"><span class="tag">Hospitality / Hotel</span></td>
+          <td data-label="Klien (Klik & Ketik)"><div class="editable" contenteditable="true">Ketik di sini...</div></td>
+          <td data-label="Teknologi">HTML/CSS/JS</td>
+          <td data-label="Kode Sumber"><a href="https://github.com/evevdigital-arch/evevdigital-hotel" target="_blank">Lihat GitHub</a></td>
         </tr>
         <tr>
-          <td>8</td>
-          <td><div class="img-wrapper"><img src="https://image.thum.io/get/width/400/crop/800/https://evevdigital-wedding-organizer.vercel.app" alt="Screenshot" loading="lazy"></div></td>
-          <td><a href="https://evevdigital-wedding-organizer.vercel.app" target="_blank">evevdigital-wedding-organizer</a></td>
-          <td><span class="tag">Event Organizer</span></td>
-          <td><div class="editable" contenteditable="true">Ketik di sini...</div></td>
-          <td>HTML/CSS/JS</td>
-          <td><a href="https://github.com/evevdigital-arch/evevdigital-wedding-organizer" target="_blank">Lihat GitHub</a></td>
+          <td data-label="No">8</td>
+          <td data-label="Tangkapan Layar (Otomatis)"><div class="img-wrapper"><img src="https://image.thum.io/get/width/400/crop/800/https://evevdigital-wedding-organizer.vercel.app" alt="Screenshot" loading="lazy"></div></td>
+          <td data-label="Nama Proyek & Tautan"><a href="https://evevdigital-wedding-organizer.vercel.app" target="_blank">evevdigital-wedding-organizer</a></td>
+          <td data-label="Kategori"><span class="tag">Event Organizer</span></td>
+          <td data-label="Klien (Klik & Ketik)"><div class="editable" contenteditable="true">Ketik di sini...</div></td>
+          <td data-label="Teknologi">HTML/CSS/JS</td>
+          <td data-label="Kode Sumber"><a href="https://github.com/evevdigital-arch/evevdigital-wedding-organizer" target="_blank">Lihat GitHub</a></td>
         </tr>
         <tr>
-          <td>9</td>
-          <td><div class="img-wrapper"><img src="https://image.thum.io/get/width/400/crop/800/https://vapestore-nine.vercel.app" alt="Screenshot" loading="lazy"></div></td>
-          <td><a href="https://vapestore-nine.vercel.app" target="_blank">vapestore-nine</a></td>
-          <td><span class="tag">Retail Khusus</span></td>
-          <td><div class="editable" contenteditable="true">Ketik di sini...</div></td>
-          <td>HTML/CSS/JS</td>
-          <td><a href="https://github.com/evevdigital-arch/vapestore" target="_blank">Lihat GitHub</a></td>
+          <td data-label="No">9</td>
+          <td data-label="Tangkapan Layar (Otomatis)"><div class="img-wrapper"><img src="https://image.thum.io/get/width/400/crop/800/https://vapestore-nine.vercel.app" alt="Screenshot" loading="lazy"></div></td>
+          <td data-label="Nama Proyek & Tautan"><a href="https://vapestore-nine.vercel.app" target="_blank">vapestore-nine</a></td>
+          <td data-label="Kategori"><span class="tag">Retail Khusus</span></td>
+          <td data-label="Klien (Klik & Ketik)"><div class="editable" contenteditable="true">Ketik di sini...</div></td>
+          <td data-label="Teknologi">HTML/CSS/JS</td>
+          <td data-label="Kode Sumber"><a href="https://github.com/evevdigital-arch/vapestore" target="_blank">Lihat GitHub</a></td>
         </tr>
         <tr>
-          <td>10</td>
-          <td><div class="img-wrapper"><img src="https://image.thum.io/get/width/400/crop/800/https://evevdigital-kopi.vercel.app" alt="Screenshot" loading="lazy"></div></td>
-          <td><a href="https://evevdigital-kopi.vercel.app" target="_blank">evevdigital-kopi</a></td>
-          <td><span class="tag">F&B / Cafe</span></td>
-          <td><div class="editable" contenteditable="true">Ketik di sini...</div></td>
-          <td>HTML/CSS/JS</td>
-          <td><a href="https://github.com/evevdigital-arch/evevdigital-kopi" target="_blank">Lihat GitHub</a></td>
+          <td data-label="No">10</td>
+          <td data-label="Tangkapan Layar (Otomatis)"><div class="img-wrapper"><img src="https://image.thum.io/get/width/400/crop/800/https://evevdigital-kopi.vercel.app" alt="Screenshot" loading="lazy"></div></td>
+          <td data-label="Nama Proyek & Tautan"><a href="https://evevdigital-kopi.vercel.app" target="_blank">evevdigital-kopi</a></td>
+          <td data-label="Kategori"><span class="tag">F&B / Cafe</span></td>
+          <td data-label="Klien (Klik & Ketik)"><div class="editable" contenteditable="true">Ketik di sini...</div></td>
+          <td data-label="Teknologi">HTML/CSS/JS</td>
+          <td data-label="Kode Sumber"><a href="https://github.com/evevdigital-arch/evevdigital-kopi" target="_blank">Lihat GitHub</a></td>
         </tr>
         <tr>
-          <td>11</td>
-          <td><div class="img-wrapper"><img src="https://image.thum.io/get/width/400/crop/800/https://evevdigital-percetakansablon.vercel.app" alt="Screenshot" loading="lazy"></div></td>
-          <td><a href="https://evevdigital-percetakansablon.vercel.app" target="_blank">evevdigital-percetakansablon</a></td>
-          <td><span class="tag">B2B / Jasa Cetak</span></td>
-          <td><div class="editable" contenteditable="true">Ketik di sini...</div></td>
-          <td>HTML/CSS/JS</td>
-          <td><a href="https://github.com/evevdigital-arch/evevdigital-percetakansablon" target="_blank">Lihat GitHub</a></td>
+          <td data-label="No">11</td>
+          <td data-label="Tangkapan Layar (Otomatis)"><div class="img-wrapper"><img src="https://image.thum.io/get/width/400/crop/800/https://evevdigital-percetakansablon.vercel.app" alt="Screenshot" loading="lazy"></div></td>
+          <td data-label="Nama Proyek & Tautan"><a href="https://evevdigital-percetakansablon.vercel.app" target="_blank">evevdigital-percetakansablon</a></td>
+          <td data-label="Kategori"><span class="tag">B2B / Jasa Cetak</span></td>
+          <td data-label="Klien (Klik & Ketik)"><div class="editable" contenteditable="true">Ketik di sini...</div></td>
+          <td data-label="Teknologi">HTML/CSS/JS</td>
+          <td data-label="Kode Sumber"><a href="https://github.com/evevdigital-arch/evevdigital-percetakansablon" target="_blank">Lihat GitHub</a></td>
         </tr>
         <tr>
-          <td>12</td>
-          <td><div class="img-wrapper"><img src="https://image.thum.io/get/width/400/crop/800/https://roti-evevdigital.vercel.app" alt="Screenshot" loading="lazy"></div></td>
-          <td><a href="https://roti-evevdigital.vercel.app" target="_blank">roti-evevdigital</a></td>
-          <td><span class="tag">F&B / Bakery</span></td>
-          <td><div class="editable" contenteditable="true">Ketik di sini...</div></td>
-          <td>HTML/CSS/JS</td>
-          <td><a href="https://github.com/evevdigital-arch/roti-evevdigital" target="_blank">Lihat GitHub</a></td>
+          <td data-label="No">12</td>
+          <td data-label="Tangkapan Layar (Otomatis)"><div class="img-wrapper"><img src="https://image.thum.io/get/width/400/crop/800/https://roti-evevdigital.vercel.app" alt="Screenshot" loading="lazy"></div></td>
+          <td data-label="Nama Proyek & Tautan"><a href="https://roti-evevdigital.vercel.app" target="_blank">roti-evevdigital</a></td>
+          <td data-label="Kategori"><span class="tag">F&B / Bakery</span></td>
+          <td data-label="Klien (Klik & Ketik)"><div class="editable" contenteditable="true">Ketik di sini...</div></td>
+          <td data-label="Teknologi">HTML/CSS/JS</td>
+          <td data-label="Kode Sumber"><a href="https://github.com/evevdigital-arch/roti-evevdigital" target="_blank">Lihat GitHub</a></td>
         </tr>
         <tr>
-          <td>13</td>
-          <td><div class="img-wrapper"><img src="https://image.thum.io/get/width/400/crop/800/https://evevdigital-yohan-massage.vercel.app" alt="Screenshot" loading="lazy"></div></td>
-          <td><a href="https://evevdigital-yohan-massage.vercel.app" target="_blank">evevdigital-yohan-massage</a></td>
-          <td><span class="tag">Kesehatan / Pijat</span></td>
-          <td><div class="editable" contenteditable="true">Ketik di sini...</div></td>
-          <td>HTML/CSS/JS</td>
-          <td><a href="https://github.com/evevdigital-arch/evevdigital-yohan-massage" target="_blank">Lihat GitHub</a></td>
+          <td data-label="No">13</td>
+          <td data-label="Tangkapan Layar (Otomatis)"><div class="img-wrapper"><img src="https://image.thum.io/get/width/400/crop/800/https://evevdigital-yohan-massage.vercel.app" alt="Screenshot" loading="lazy"></div></td>
+          <td data-label="Nama Proyek & Tautan"><a href="https://evevdigital-yohan-massage.vercel.app" target="_blank">evevdigital-yohan-massage</a></td>
+          <td data-label="Kategori"><span class="tag">Kesehatan / Pijat</span></td>
+          <td data-label="Klien (Klik & Ketik)"><div class="editable" contenteditable="true">Ketik di sini...</div></td>
+          <td data-label="Teknologi">HTML/CSS/JS</td>
+          <td data-label="Kode Sumber"><a href="https://github.com/evevdigital-arch/evevdigital-yohan-massage" target="_blank">Lihat GitHub</a></td>
         </tr>
         <tr>
-          <td>14</td>
-          <td><div class="img-wrapper"><img src="https://image.thum.io/get/width/400/crop/800/https://evevdigital-pijat-refleksi.vercel.app" alt="Screenshot" loading="lazy"></div></td>
-          <td><a href="https://evevdigital-pijat-refleksi.vercel.app" target="_blank">evevdigital-pijat-refleksi</a></td>
-          <td><span class="tag">Kesehatan / Spa</span></td>
-          <td><div class="editable" contenteditable="true">Ketik di sini...</div></td>
-          <td>HTML/CSS/JS</td>
-          <td><a href="https://github.com/evevdigital-arch/evevdigital-pijat-refleksi" target="_blank">Lihat GitHub</a></td>
+          <td data-label="No">14</td>
+          <td data-label="Tangkapan Layar (Otomatis)"><div class="img-wrapper"><img src="https://image.thum.io/get/width/400/crop/800/https://evevdigital-pijat-refleksi.vercel.app" alt="Screenshot" loading="lazy"></div></td>
+          <td data-label="Nama Proyek & Tautan"><a href="https://evevdigital-pijat-refleksi.vercel.app" target="_blank">evevdigital-pijat-refleksi</a></td>
+          <td data-label="Kategori"><span class="tag">Kesehatan / Spa</span></td>
+          <td data-label="Klien (Klik & Ketik)"><div class="editable" contenteditable="true">Ketik di sini...</div></td>
+          <td data-label="Teknologi">HTML/CSS/JS</td>
+          <td data-label="Kode Sumber"><a href="https://github.com/evevdigital-arch/evevdigital-pijat-refleksi" target="_blank">Lihat GitHub</a></td>
         </tr>
         <tr>
-          <td>15</td>
-          <td><div class="img-wrapper"><img src="https://image.thum.io/get/width/400/crop/800/https://landing-page-evevdigital.vercel.app" alt="Screenshot" loading="lazy"></div></td>
-          <td><a href="https://landing-page-evevdigital.vercel.app" target="_blank">landing-page-evevdigital</a></td>
-          <td><span class="tag">Agency / Portofolio</span></td>
-          <td><div class="editable" contenteditable="true">Ketik di sini...</div></td>
-          <td>HTML/CSS/JS</td>
-          <td><a href="https://github.com/evevdigital-arch/landing-page-evevdigital" target="_blank">Lihat GitHub</a></td>
+          <td data-label="No">15</td>
+          <td data-label="Tangkapan Layar (Otomatis)"><div class="img-wrapper"><img src="https://image.thum.io/get/width/400/crop/800/https://landing-page-evevdigital.vercel.app" alt="Screenshot" loading="lazy"></div></td>
+          <td data-label="Nama Proyek & Tautan"><a href="https://landing-page-evevdigital.vercel.app" target="_blank">landing-page-evevdigital</a></td>
+          <td data-label="Kategori"><span class="tag">Agency / Portofolio</span></td>
+          <td data-label="Klien (Klik & Ketik)"><div class="editable" contenteditable="true">Ketik di sini...</div></td>
+          <td data-label="Teknologi">HTML/CSS/JS</td>
+          <td data-label="Kode Sumber"><a href="https://github.com/evevdigital-arch/landing-page-evevdigital" target="_blank">Lihat GitHub</a></td>
         </tr>
         <tr>
-          <td>16</td>
-          <td><div class="img-wrapper"><img src="https://image.thum.io/get/width/400/crop/800/https://evevdigital-catering.vercel.app" alt="Screenshot" loading="lazy"></div></td>
-          <td><a href="https://evevdigital-catering.vercel.app" target="_blank">evevdigital-catering</a></td>
-          <td><span class="tag">F&B / Catering</span></td>
-          <td><div class="editable" contenteditable="true">Ketik di sini...</div></td>
-          <td>HTML/CSS/JS</td>
-          <td><a href="https://github.com/evevdigital-arch/nusarasa-catering" target="_blank">Lihat GitHub</a></td>
+          <td data-label="No">16</td>
+          <td data-label="Tangkapan Layar (Otomatis)"><div class="img-wrapper"><img src="https://image.thum.io/get/width/400/crop/800/https://evevdigital-catering.vercel.app" alt="Screenshot" loading="lazy"></div></td>
+          <td data-label="Nama Proyek & Tautan"><a href="https://evevdigital-catering.vercel.app" target="_blank">evevdigital-catering</a></td>
+          <td data-label="Kategori"><span class="tag">F&B / Catering</span></td>
+          <td data-label="Klien (Klik & Ketik)"><div class="editable" contenteditable="true">Ketik di sini...</div></td>
+          <td data-label="Teknologi">HTML/CSS/JS</td>
+          <td data-label="Kode Sumber"><a href="https://github.com/evevdigital-arch/nusarasa-catering" target="_blank">Lihat GitHub</a></td>
         </tr>
         <tr>
-          <td>17</td>
-          <td><div class="img-wrapper"><img src="https://image.thum.io/get/width/400/crop/800/https://evevdigital-laundry.vercel.app" alt="Screenshot" loading="lazy"></div></td>
-          <td><a href="https://evevdigital-laundry.vercel.app" target="_blank">evevdigital-laundry</a></td>
-          <td><span class="tag">Jasa Kebersihan</span></td>
-          <td><div class="editable" contenteditable="true">Ketik di sini...</div></td>
-          <td>HTML/CSS/JS</td>
-          <td><a href="https://github.com/evevdigital-arch/freshklin-laundry" target="_blank">Lihat GitHub</a></td>
+          <td data-label="No">17</td>
+          <td data-label="Tangkapan Layar (Otomatis)"><div class="img-wrapper"><img src="https://image.thum.io/get/width/400/crop/800/https://evevdigital-laundry.vercel.app" alt="Screenshot" loading="lazy"></div></td>
+          <td data-label="Nama Proyek & Tautan"><a href="https://evevdigital-laundry.vercel.app" target="_blank">evevdigital-laundry</a></td>
+          <td data-label="Kategori"><span class="tag">Jasa Kebersihan</span></td>
+          <td data-label="Klien (Klik & Ketik)"><div class="editable" contenteditable="true">Ketik di sini...</div></td>
+          <td data-label="Teknologi">HTML/CSS/JS</td>
+          <td data-label="Kode Sumber"><a href="https://github.com/evevdigital-arch/freshklin-laundry" target="_blank">Lihat GitHub</a></td>
         </tr>
         <tr>
-          <td>18</td>
-          <td><div class="img-wrapper"><img src="https://image.thum.io/get/width/400/crop/800/https://evevdigital-autocare.vercel.app" alt="Screenshot" loading="lazy"></div></td>
-          <td><a href="https://evevdigital-autocare.vercel.app" target="_blank">evevdigital-autocare</a></td>
-          <td><span class="tag">Otomotif / Cuci Mobil</span></td>
-          <td><div class="editable" contenteditable="true">Ketik di sini...</div></td>
-          <td>HTML/CSS/JS</td>
-          <td><a href="https://github.com/evevdigital-arch/evevdigital-autocare" target="_blank">Lihat GitHub</a></td>
+          <td data-label="No">18</td>
+          <td data-label="Tangkapan Layar (Otomatis)"><div class="img-wrapper"><img src="https://image.thum.io/get/width/400/crop/800/https://evevdigital-autocare.vercel.app" alt="Screenshot" loading="lazy"></div></td>
+          <td data-label="Nama Proyek & Tautan"><a href="https://evevdigital-autocare.vercel.app" target="_blank">evevdigital-autocare</a></td>
+          <td data-label="Kategori"><span class="tag">Otomotif / Cuci Mobil</span></td>
+          <td data-label="Klien (Klik & Ketik)"><div class="editable" contenteditable="true">Ketik di sini...</div></td>
+          <td data-label="Teknologi">HTML/CSS/JS</td>
+          <td data-label="Kode Sumber"><a href="https://github.com/evevdigital-arch/evevdigital-autocare" target="_blank">Lihat GitHub</a></td>
         </tr>
         <tr>
-          <td>19</td>
-          <td><div class="img-wrapper"><img src="https://image.thum.io/get/width/400/crop/800/https://salon-evevdigital.vercel.app" alt="Screenshot" loading="lazy"></div></td>
-          <td><a href="https://salon-evevdigital.vercel.app" target="_blank">salon-evevdigital</a></td>
-          <td><span class="tag">Kecantikan / Salon</span></td>
-          <td><div class="editable" contenteditable="true">Ketik di sini...</div></td>
-          <td>HTML/CSS/JS</td>
-          <td><a href="https://github.com/evevdigital-arch/salon-evevdigital" target="_blank">Lihat GitHub</a></td>
+          <td data-label="No">19</td>
+          <td data-label="Tangkapan Layar (Otomatis)"><div class="img-wrapper"><img src="https://image.thum.io/get/width/400/crop/800/https://salon-evevdigital.vercel.app" alt="Screenshot" loading="lazy"></div></td>
+          <td data-label="Nama Proyek & Tautan"><a href="https://salon-evevdigital.vercel.app" target="_blank">salon-evevdigital</a></td>
+          <td data-label="Kategori"><span class="tag">Kecantikan / Salon</span></td>
+          <td data-label="Klien (Klik & Ketik)"><div class="editable" contenteditable="true">Ketik di sini...</div></td>
+          <td data-label="Teknologi">HTML/CSS/JS</td>
+          <td data-label="Kode Sumber"><a href="https://github.com/evevdigital-arch/salon-evevdigital" target="_blank">Lihat GitHub</a></td>
         </tr>
       </tbody>
     </table>
