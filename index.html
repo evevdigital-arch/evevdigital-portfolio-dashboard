@@ -28,6 +28,13 @@
   .filters input:focus { border-color: #1abc9c; box-shadow: 0 0 5px rgba(26, 188, 156, 0.3); }
   @media print { .btn-print, .filters { display: none; } body { background: #fff; padding: 0; } table { box-shadow: none; border: 1px solid #ddd; } }
   
+  /* Pagination Styles */
+  .pagination { display: flex; justify-content: center; gap: 8px; margin-top: 30px; }
+  .pagination button { padding: 8px 16px; border: 1px solid #1abc9c; background: white; color: #1abc9c; border-radius: 6px; cursor: pointer; font-weight: bold; transition: all 0.2s; }
+  .pagination button:hover:not(:disabled) { background: #1abc9c; color: white; }
+  .pagination button.active { background: #1abc9c; color: white; }
+  .pagination button:disabled { border-color: #bdc3c7; color: #bdc3c7; cursor: not-allowed; }
+  @media print { .pagination { display: none; } }
   /* Responsive Mobile */
   @media (max-width: 768px) {
     .filters { flex-direction: column; }
@@ -252,32 +259,102 @@
         </tr>
       </tbody>
     </table>
+    <div id="pagination" class="pagination"></div>
   </div>
 
   <script>
-    function filterTable() {
-      var inputKat = document.getElementById("filterKategori").value.toUpperCase();
-      var inputKli = document.getElementById("filterKlien").value.toUpperCase();
-      var table = document.getElementById("portfolioTable");
-      var tr = table.getElementsByTagName("tr");
+    const itemsPerPage = 10;
+    let currentPage = 1;
+    let filteredRows = [];
 
-      for (var i = 1; i < tr.length; i++) {
-        var tdKat = tr[i].getElementsByTagName("td")[3]; // Indeks kolom Kategori
-        var tdKli = tr[i].getElementsByTagName("td")[4]; // Indeks kolom Klien
+    function initTable() {
+      const table = document.getElementById("portfolioTable");
+      const tbody = table.getElementsByTagName("tbody")[0];
+      const tr = tbody.getElementsByTagName("tr");
+      // Simpan semua baris awal
+      filteredRows = Array.from(tr);
+      renderTable();
+    }
+
+    function filterTable() {
+      const inputKat = document.getElementById("filterKategori").value.toUpperCase();
+      const inputKli = document.getElementById("filterKlien").value.toUpperCase();
+      const table = document.getElementById("portfolioTable");
+      const tbody = table.getElementsByTagName("tbody")[0];
+      const tr = tbody.getElementsByTagName("tr");
+
+      filteredRows = [];
+      for (let i = 0; i < tr.length; i++) {
+        const tdKat = tr[i].getElementsByTagName("td")[3]; 
+        const tdKli = tr[i].getElementsByTagName("td")[4]; 
         
         if (tdKat && tdKli) {
-          var txtKat = tdKat.textContent || tdKat.innerText;
-          // Untuk klien, kita harus mengambil teks dari div editable-nya
-          var txtKli = tdKli.textContent || tdKli.innerText;
+          const txtKat = tdKat.textContent || tdKat.innerText;
+          const txtKli = tdKli.textContent || tdKli.innerText;
           
           if (txtKat.toUpperCase().indexOf(inputKat) > -1 && txtKli.toUpperCase().indexOf(inputKli) > -1) {
-            tr[i].style.display = "";
+            filteredRows.push(tr[i]);
           } else {
-            tr[i].style.display = "none";
+            tr[i].style.display = "none"; // Sembunyikan yang tidak cocok
           }
         }       
       }
+      currentPage = 1; // Reset ke halaman 1 saat filter berjalan
+      renderTable();
     }
+
+    function renderTable() {
+       // Sembunyikan semua baris terlebih dahulu
+       const table = document.getElementById("portfolioTable");
+       const tbody = table.getElementsByTagName("tbody")[0];
+       const allTr = tbody.getElementsByTagName("tr");
+       for(let i=0; i<allTr.length; i++) {
+           allTr[i].style.display = "none";
+       }
+
+       const startIndex = (currentPage - 1) * itemsPerPage;
+       const endIndex = startIndex + itemsPerPage;
+
+       // Tampilkan hanya baris pada halaman saat ini dari data yang sudah difilter
+       for(let i=startIndex; i<endIndex && i<filteredRows.length; i++) {
+           filteredRows[i].style.display = "";
+       }
+
+       renderPagination();
+    }
+
+    function renderPagination() {
+        const totalPages = Math.ceil(filteredRows.length / itemsPerPage);
+        const paginationDiv = document.getElementById("pagination");
+        paginationDiv.innerHTML = "";
+        
+        if (totalPages <= 1) return;
+
+        // Tombol Prev
+        const prevBtn = document.createElement("button");
+        prevBtn.innerText = "« Sebelumnya";
+        prevBtn.disabled = currentPage === 1;
+        prevBtn.onclick = () => { currentPage--; renderTable(); };
+        paginationDiv.appendChild(prevBtn);
+
+        // Tombol Angka Halaman
+        for (let i = 1; i <= totalPages; i++) {
+            const pageBtn = document.createElement("button");
+            pageBtn.innerText = i;
+            if (i === currentPage) pageBtn.classList.add("active");
+            pageBtn.onclick = () => { currentPage = i; renderTable(); };
+            paginationDiv.appendChild(pageBtn);
+        }
+
+        // Tombol Next
+        const nextBtn = document.createElement("button");
+        nextBtn.innerText = "Selanjutnya »";
+        nextBtn.disabled = currentPage === totalPages;
+        nextBtn.onclick = () => { currentPage++; renderTable(); };
+        paginationDiv.appendChild(nextBtn);
+    }
+
+    document.addEventListener("DOMContentLoaded", initTable);
   </script>
 </body>
 </html>
